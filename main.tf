@@ -20,14 +20,14 @@ variable "imagebuild" {
 
 
 resource "azurerm_resource_group" "tf_test2" {
-  name = "tfmainrg"
+  name = "tfrg2"
   location = "Australia East"
 }
 
 resource "azurerm_container_group" "tfcg_test2" {
   name                      = "sampleapp2"
-  location                  = azurerm_resource_group.tf_test.location
-  resource_group_name       = azurerm_resource_group.tf_test.name
+  location                  = azurerm_resource_group.tf_test2.location
+  resource_group_name       = azurerm_resource_group.tf_test2.name
 
   ip_address_type     = "public"
   dns_name_label      = "sampleapp2"
